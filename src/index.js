@@ -1,7 +1,6 @@
 module.exports = function toReadable(number) {
     let numbersinwords = {
         lesstwenty: {
-            0: "zero",
             1: "one",
             2: "two",
             3: "three",
@@ -32,7 +31,7 @@ module.exports = function toReadable(number) {
     let words = "";
     let currectnumber;
     if (number === 0) {
-        return 0;
+        return "zero";
     }
     for (let i = n.length - 1; i >= 0; i--) {
         if (i == 3) {
@@ -55,6 +54,8 @@ module.exports = function toReadable(number) {
                     words += "twenty ";
                 } else if (n[i] == 3) {
                     words += "thirty ";
+                } else if (n[i] == 4) {
+                    words += "forty ";
                 } else if (n[i] == 5) {
                     words += "fifty ";
                 } else {
